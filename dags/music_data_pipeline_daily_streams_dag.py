@@ -4,6 +4,7 @@ from airflow.operators.python import PythonOperator, BranchPythonOperator
 from airflow.sensors.s3_key_sensor import S3KeySensor
 from airflow.utils.trigger_rule import TriggerRule
 import boto3
+import os
 from datetime import datetime
 import pytz
 import time
@@ -16,7 +17,7 @@ DEFAULT_ARGS = {
 }
 
 REGION = "eu-west-1"
-SNS_TOPIC_ARN = "arn:aws:sns:eu-west-1:371439860588:music-pipeline-alerts"
+SNS_TOPIC_ARN = os.getenv("SNS_TOPIC_ARN")  # e.g. arn:aws:sns:eu-west-1:<AWS_ACCOUNT_ID>:music-pipeline-alerts
 S3_BUCKET = "lab3-dynamo-glue-etl"
 
 logger = logging.getLogger("music_pipeline")
