@@ -1,6 +1,8 @@
 ## Project Summary: Automated Music Data Pipeline
 This project aimed to build a robust and automated data pipeline for processing daily music stream data, extracting key performance indicators (KPIs), and making these insights available for business consumption. The core business need was to transform raw, high-volume stream logs into actionable metrics in a timely and reliable manner, ensuring data quality throughout the process.
 
+![Architecture diagram](architecture/streaming_etl_with_glue_and_MWAA.PNG)
+
 Business Understanding & Problem Statement
 The business required a system that could:
 
